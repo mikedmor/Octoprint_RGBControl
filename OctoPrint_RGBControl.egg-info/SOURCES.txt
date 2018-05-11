@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+OctoPrint_RGBControl.egg-info/PKG-INFO
+OctoPrint_RGBControl.egg-info/SOURCES.txt
+OctoPrint_RGBControl.egg-info/dependency_links.txt
+OctoPrint_RGBControl.egg-info/entry_points.txt
+OctoPrint_RGBControl.egg-info/not-zip-safe
+OctoPrint_RGBControl.egg-info/requires.txt
+OctoPrint_RGBControl.egg-info/top_level.txt
+octoprint_rgbcontrol/__init__.py
+octoprint_rgbcontrol/static/css/multicam.css
+octoprint_rgbcontrol/static/js/multicam.js
+octoprint_rgbcontrol/static/less/multicam.less
+octoprint_rgbcontrol/templates/multicam.jinja2
+octoprint_rgbcontrol/templates/multicam_settings.jinja2

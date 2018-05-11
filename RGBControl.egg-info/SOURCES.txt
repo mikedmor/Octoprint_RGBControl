@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+RGBControl.egg-info/PKG-INFO
+RGBControl.egg-info/SOURCES.txt
+RGBControl.egg-info/dependency_links.txt
+RGBControl.egg-info/entry_points.txt
+RGBControl.egg-info/not-zip-safe
+RGBControl.egg-info/requires.txt
+RGBControl.egg-info/top_level.txt
+octoprint_rgbcontrol/__init__.py

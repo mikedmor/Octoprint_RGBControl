@@ -1,0 +1,35 @@
+<!-- ko allowBindings: true -->
+<div class="jog-panel" id="RGBControl" style="display: none;">
+    <h1>RGB Control</h1>
+    <div>
+        <input type="text" class="jscolor {onFineChange:'RGBupdate(this)'}" value="#000000" /><br>
+        R, G, B = <span id="rgb">0, 0, 0</span>
+    </div>
+</div>
+<!-- /ko -->
+
+<script>
+    function RGBupdate(picker) {
+       var RGB = GetRGB(picker);
+       document.getElementById('rgb').innerHTML =
+           Math.round(RGB['R']) + ', ' +
+           Math.round(RGB['U']) + ', ' +
+           Math.round(RGB['B']);
+       //SEND M150 R[picker.rgb[0]] U[picker.rgb[1]] B[picker.rgb[2]]
+       //Example: "M150 R66 U109 B106
+       var command = "M150";
+       if(RGB['R'] != 0 || RGB['U'] != 0 || RGB['B'] != 0) {
+           command += " R"+RGB['R']+" U"+RGB['U']+" B"+RGB['B'];
+       }
+       console.log("Running "+command);
+       OctoPrint.control.sendGcode(command);
+   }
+
+   function GetRGB(picker) {
+       var HEXfromRGB = new Array();
+       HEXfromRGB['R'] = Math.round(picker.rgb[0]);
+       HEXfromRGB['U'] = Math.round(picker.rgb[1]);
+       HEXfromRGB['B'] = Math.round(picker.rgb[2]);
+       return HEXfromRGB;
+   }
+</script>
