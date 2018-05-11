@@ -1,5 +1,5 @@
 # OctoPrint RGBControl
-Requires [LEDStripControl]()! Extends the Control tab of Octoprint adding a color picker that sends M150 via LEDStripControl Plugin.
+Requires [LEDStripControl](https://github.com/google/OctoPrint-LEDStripControl)! Extends the Control tab of Octoprint adding a color picker that sends M150 via LEDStripControl Plugin.
 
 ## Setup
 

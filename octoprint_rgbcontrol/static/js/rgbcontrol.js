@@ -4,9 +4,10 @@ $(function() {
 
         self.onAfterBinding = function() {
             var RGBControl = $('#RGBControl');
-            var container = $('#control-jog-general')
+            var container = $('#control')
 
-            RGBControl.insertAfter(container);
+            //RGBControl.insertAfter(container);
+            container.append(RGBControl);
             RGBControl.css('display', '');
         };
 
