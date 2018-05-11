@@ -2,20 +2,35 @@ $(function() {
     function RGBControlViewModel(parameters) {
         var self = this;
 
+        var RGBControl = $('#RGBControl');
+        var container = $('#control')
+
         self.onAfterBinding = function() {
-            var RGBControl = $('#RGBControl');
-            var container = $('#control')
 
             //RGBControl.insertAfter(container);
             container.append(RGBControl);
-            RGBControl.css('display', '');
+            if(visibleTest){
+                RGBControl.css('display', '');
+            }
         };
+
+        self.onUserLoggedIn = function() {
+            RGBControl.css('display', '');
+        }
+
+        self.onUserLoggedOut = function() {
+            RGBControl.css('display', 'none');
+        }
+
+        self.visibleTest = function() {
+            return self.loginState.isUser();
+        }
 
     }
 
     OCTOPRINT_VIEWMODELS.push([
         RGBControlViewModel,
-        ["controlViewModel"],
+        ["loginStateViewModel","controlViewModel"],
         ["#RGBControl"]
     ]);
 });
